@@ -17,10 +17,12 @@ function getUserInput(symbol) {
 
     if (field[x].every((element) => element === symbol)) {
       alert(`Победил ${symbol} !`);
+      return;
     }
 
     if (field.every((element) => element[y] === symbol)) {
       alert(`Победил ${symbol} !`);
+      return;
     }
 
     if (
@@ -29,6 +31,7 @@ function getUserInput(symbol) {
       field[2][2] === symbol
     ) {
       alert(`Победил ${symbol} !`);
+      return;
     }
 
     if (
@@ -37,6 +40,7 @@ function getUserInput(symbol) {
       field[0][2] === symbol
     ) {
       alert(`Победил ${symbol} !`);
+      return;
     }
   }
 
