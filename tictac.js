@@ -16,31 +16,32 @@ function getUserInput(symbol) {
     field[x][y] = symbol;
     alert(`${field[0]}\n${field[1]}\n${field[2]}`);
 
-    if (field[x].every((element) => element === symbol))
+    if (field[x].every((element) => element === symbol)) {
       alert(`Победил ${symbol} !`);
+    }
 
-    if (field.every((element) => element[y] === symbol))
+    if (field.every((element) => element[y] === symbol)) {
       alert(`Победил ${symbol} !`);
+    }
 
     if (
       field[0][0] === symbol &&
       field[1][1] === symbol &&
       field[2][2] === symbol
-    )
+    ) {
       alert(`Победил ${symbol} !`);
+    }
+
     if (
       field[2][0] === symbol &&
       field[1][1] === symbol &&
       field[0][2] === symbol
-    )
+    ) {
       alert(`Победил ${symbol} !`);
+    }
   }
-  if (symbol === "X") {
-    getUserInput("0");
-  }
-  if (symbol === "0") {
-    getUserInput("X");
-  }
+
+  getUserInput(symbol === "X" ? "0" : "X");
 }
 
 console.log(field);
