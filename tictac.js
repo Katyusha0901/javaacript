@@ -6,15 +6,14 @@ let field = [
 
 function getUserInput(symbol) {
   const command = prompt(
-    `Куда поставить ${symbol}. Напишите 2 координаты: по y и по x, через запятую`
+    ` Поле выглядит так\n${field[0]}\n${field[1]}\n${field[2]}\nКуда поставить ${symbol}. Напишите 2 координаты: по y и по x, через запятую`
   );
-  const arrayCoordinates = command.split(",");
 
-  const x = arrayCoordinates[0];
-  const y = arrayCoordinates[1];
+  const x = command.split(",")[0];
+  const y = command.split(",")[1];
+
   if (field[x][y] === "*") {
     field[x][y] = symbol;
-    alert(`${field[0]}\n${field[1]}\n${field[2]}`);
 
     if (field[x].every((element) => element === symbol)) {
       alert(`Победил ${symbol} !`);
